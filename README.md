@@ -1,1 +1,1 @@
-# installer-utilily
+# installer-utility
