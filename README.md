@@ -19,7 +19,7 @@ dependencyResolver = require('toposort-dependency-resolver')
 This module resolves dependencies between various components and tells us the sequential order in which these components can be safely accessed.
 The underlying algorithm being used is topological-sorting via a Directed Acyclic Graph(DAG).
 
-![DAG](/static/directedacyclic.jpg?raw=true)
+![DAG](/static/directedacyclic.JPG?raw=true)
 
 
 ## API
@@ -127,7 +127,7 @@ npm run test
 # Run test along with code coverage
 npm run coverage
 ```
-![Coverage](/static/coverage.jpg?raw=true)
+![Coverage](/static/coverage.JPG?raw=true)
 
 ## Future Enhancements
 
