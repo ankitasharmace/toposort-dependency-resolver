@@ -1,6 +1,6 @@
 {
-	"name": "installer-utility",
-	"version": "1.0.0",
+	"name": "toposort-dependency-resolver",
+	"version": "1.0.1",
 	"main": "index.js",
 	"dependencies": {
 		"async": "^2.6.1",
