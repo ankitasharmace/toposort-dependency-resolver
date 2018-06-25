@@ -195,12 +195,13 @@ describe('Unit Tests', function() {
 				{
 					component : "1", 
 					dependsOn : [], 
-					"options": {
+					"options": 
+					{
 						url : 'http://localhost:8080/api/bears',
 						method:'GET',
 						headers:{},
 						data:{}
-						} 
+					} 
 				},
 				{
 					component : "2", 
