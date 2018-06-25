@@ -16,7 +16,10 @@ dependencyResolver = require('toposort-dependency-resolver')
 
 ## Usage
 
+This module resolves dependencies between various components and tells us the sequential order in which these components can be safely accessed.
+The underlying algorithm being used is topological-sorting via a Directed Acyclic Graph(DAG).
 
+![DAG](/static/directedacyclic.jpg?raw=true)
 
 
 ## API
@@ -25,7 +28,8 @@ dependencyResolver = require('toposort-dependency-resolver')
 
 Examples : 
 #1
-		resolveDependency(
+```js
+	dependencyResolver.resolveDependency(
 			[
 				{
 					component : "1", 
@@ -41,13 +45,15 @@ Examples :
 				}
 
 			],function(err, result) {})
-
+```
 			If the input forms a directed acyclic graph,
 			err : null
 			result: [{"component" : 1"}, {"component" : "2"}, {"component" : "3"}]
 
 #2
-		resolveDependency(
+
+```js
+	dependencyResolver.resolveDependency(
 		   [
            		{
 					component : "A", 
@@ -62,13 +68,15 @@ Examples :
 					dependsOn : ["B"], 
 				}
 		   ],function(err, result) {})
-
+```
 		   err.message : "Dependencies are cyclic"
 
 * resolveDependencyAndMakeApiCalls(data, callback)
 
 Example :
-		resolveDependencyAndMakeApiCalls(
+
+```js
+	dependencyResolver.resolveDependencyAndMakeApiCalls(
 			[
            		{
 					component : "A", 
@@ -101,6 +109,7 @@ Example :
 				    } 
 				}
 		   ],function(err) {})
+```
 
 		If dependencies are cyclic, this function returns err("Dependencies are cyclic").
 	    If it is a directed acyclic graph and all the API calls are successful, err is null.
@@ -118,6 +127,7 @@ npm run test
 # Run test along with code coverage
 npm run coverage
 ```
+![Coverage](/static/coverage.jpg?raw=true)
 
 ## Future Enhancements
 
